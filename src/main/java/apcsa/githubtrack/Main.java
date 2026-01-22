@@ -3,7 +3,7 @@ package apcsa.githubtrack;
 // Implement your Main class (with the main method) here
 public class Main {
     public static void main(String[] args) { // main method
-        
+
         ShoppingList breakfastEssentials = new ShoppingList(); // creates new ShoppingList object
         breakfastEssentials.addToEnd(new ShoppingItem("Eggs", 350)); // adds item to end of list
         ShoppingItem Zucchini = new ShoppingItem("Zucchini", 275); // creates new ShoppingItem object

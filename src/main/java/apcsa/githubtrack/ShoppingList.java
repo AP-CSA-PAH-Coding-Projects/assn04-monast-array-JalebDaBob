@@ -69,7 +69,8 @@ public class ShoppingList implements MyList {
         if(index < 0 || index > size) // checks if index is in bounds
         {
             System.out.println("Invalid index!");
-            return null; // returns null if index is invalid
+            ShoppingItem invalid = new ShoppingItem("Invalid index!", 0); // creates dummy ShoppingItem to return
+            return invalid; // returns dummy ShoppingItem
         }
         else
         {
