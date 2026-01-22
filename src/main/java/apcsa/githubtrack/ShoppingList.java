@@ -15,17 +15,18 @@ public class ShoppingList implements MyList {
         size = 0;
     }
 
-    public void addToEnd(ShoppingItem item) // this method adds item to end of list
+    public void addToEnd(Object item) // this method adds item to end of list (debug console said to use Object type for parameter)
     {
+        ShoppingItem shoppingItem = (ShoppingItem) item; // casts Object to ShoppingItem (Debug console said this will fix error message)
         if(size == capacity)
         {
             makeCapacity(capacity * 2); // doubles capacity if size equals capacity
         }
-        items[size] = item; // adds item to end of the list
+        items[size] = shoppingItem; // adds shoppingItem to end of the list
         size++; // increases size by 1
     }
 
-    public void insertAt(int index, ShoppingItem item) // this method inserts item at index
+    public void insertAt(int index, Object item) // this method inserts item at index, and again, debug console said to use Object as a parameter
     {
         if(index < 0 || index > size) // checks if index is in bounds
         {
@@ -33,6 +34,7 @@ public class ShoppingList implements MyList {
         }
         else
         {
+            ShoppingItem shoppingItem = (ShoppingItem) item; // casts Object to ShoppingItem (Again, debug console said this will fix error message)
             if(size == capacity)
             {
                 makeCapacity(capacity * 2); // doubles capacity if size equals capacity
@@ -41,7 +43,7 @@ public class ShoppingList implements MyList {
             {
                 items[i] = items[i - 1];
             }
-            items[index] = item; // inserts item at index
+            items[index] = shoppingItem; // inserts shoppingItem at index
             size++; // increases size by 1
         }
     }
@@ -67,6 +69,7 @@ public class ShoppingList implements MyList {
         if(index < 0 || index > size) // checks if index is in bounds
         {
             System.out.println("Invalid index!");
+            return null; // returns null if index is invalid
         }
         else
         {
@@ -99,7 +102,7 @@ public class ShoppingList implements MyList {
 
     public void trimExcess() // this uses makeCapacity to set the capacity to size
     {
-        items.makeCapacity(size);
+        this.makeCapacity(size);
     }
 
     public void goShopping() // method buys all items in list
@@ -128,7 +131,7 @@ public class ShoppingList implements MyList {
         }
     }
 
-    public double totalPrice() // method returns total price of all items in list
+    public double getTotalPrice() // method returns total price of all items in list
     {
         double total = 0.0; // counter variable
         for(int i = 0; i < size; i++) // loops through array

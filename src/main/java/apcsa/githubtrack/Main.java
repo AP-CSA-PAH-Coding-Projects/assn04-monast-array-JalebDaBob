@@ -22,11 +22,8 @@ public class Main {
         dormRun.addToEnd(Eggs); // adds eggs to end of list
         ShoppingItem Tissues = new ShoppingItem("Tissues", 100); // creates new ShoppingItem object
         dormRun.addToEnd(Tissues); // adds tissues to end of list
-        ShoppingItem Zucchini = new ShoppingItem("Zucchini", 275); // creates new ShoppingItem object
         dormRun.addToEnd(Zucchini); // adds zucchini to end of list
-        ShoppingItem FrozenBerries = new ShoppingItem("Frozen Berries", 515); // creates new ShoppingItem object
         dormRun.addToEnd(FrozenBerries); // adds frozen berries to end of list
-        ShoppingItem SmokedSalmon = new ShoppingItem("Smoked Salmon", 999); // creates new ShoppingItem object
         dormRun.addToEnd(SmokedSalmon); // adds smoked salmon to end of list
         ShoppingCart dormCart = new ShoppingCart("Emilia", dormRun); // creates new ShoppingCart object
 
@@ -34,20 +31,20 @@ public class Main {
 
         dormRun.removeAt(1); // removes tissues from dormRun
         dormRun.removeAt(4); // removes smoked salmon from dormRun
-        dormRun.buy(0); // buys eggs
-        dormRun.buy(4); // buys smoked salmon (which has been removed)
+        dormRun.getAt(0).buy(); // buys eggs
+        dormRun.getAt(4).buy(); // buys smoked salmon (which has been removed)
         System.out.println(dormCart.isCompleted()); // checks if dormCart is completed and prints out the result
         breakfastEssentials.goShopping(); // buys all items in breakfastEssentials
-        System.out.println(getTotalCartsReturned()); // prints total carts returned (should be 0)
+        System.out.println(ShoppingCart.getTotalCartsReturned()); // prints total carts returned (should be 0)
         breakfastCart.returnCart(); // returns breakfastCart
         dormCart.returnCart(); // returns dormCart
-        System.out.println(getTotalCartsReturned()); // prints total carts returned (should be 1)
+        System.out.println(ShoppingCart.getTotalCartsReturned()); // prints total carts returned (should be 1)
 
-        System.out.println(breakfastEssentials[1].compareTo(dormRun[3])); // compares the first item in breakfastEssentials to the third item in dormRun and prints out the result
+        System.out.println(breakfastEssentials.getAt(1).compareTo(dormRun.getAt(3))); // compares the first item in breakfastEssentials to the third item in dormRun and prints out the result
 
         // prints a summary:
-        System.out.println("breakfastCart contains: Eggs, Zucchini, Frozen Berries, Smoked Salmon for a total of $" + breakfastEssentials.TotalPrice());
-        System.out.println("dormCart contains: Eggs, Tissues, Zucchini, Frozen Berries, Smoked Salmon for a total of $" + dormRun.TotalPrice());
+        System.out.println("breakfastCart contains: Eggs, Zucchini, Frozen Berries, Smoked Salmon for a total of $" + breakfastEssentials.getTotalPrice());
+        System.out.println("dormCart contains: Eggs, Tissues, Zucchini, Frozen Berries, Smoked Salmon for a total of $" + dormRun.getTotalPrice());
 
     }
 }

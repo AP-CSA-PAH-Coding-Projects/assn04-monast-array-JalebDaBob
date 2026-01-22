@@ -2,10 +2,10 @@ package apcsa.githubtrack;
 
 // Implement your ShoppingCart class here
 public class ShoppingCart {
-    private ShoppingList[] list; // storage for shopping list
+    private ShoppingList list; // storage for shopping list
     private String name; // customer name
     private boolean complete; // whether or not the mission is complete
-    private boolean returned; // whether or not the cart can be returned
+    private boolean isReturned; // whether or not the cart can be returned
     private static int returned = 0; // static variable to keep track of total carts returned
 
     public ShoppingCart(String name, ShoppingList list) // constructor
@@ -13,7 +13,7 @@ public class ShoppingCart {
         this.name = name; // sets customer name
         this.list = list; // sets shopping list
         this.complete = false; // sets complete to false by default
-        this.returned = 0; // sets returned to 0 by default
+        this.isReturned = false; // sets returned to 0 by default
     }
 
     public ShoppingCart(String name) // constructor with no ShoppingList
@@ -21,7 +21,7 @@ public class ShoppingCart {
         this.name = name; // sets customer name
         this.list = new ShoppingList(); // initializes list to an empty shopping list
         this.complete = false; // complete set to false by default
-        this.returned = 0; // returned set to 0 by default
+        this.isReturned = false; // returned set to 0 by default
     }
 
     public boolean isCompleted() // returns true if all items in ShoppingList are bought
@@ -39,10 +39,10 @@ public class ShoppingCart {
 
     public void returnCart() // method to return cart
     {
-        if(complete == true && returned == false) // checks if cart is complete and has not been returned yet
+        if(complete == true && isReturned == false) // checks if cart is complete and has not been returned yet
         {
             returned++; // adds 1 to total carts returned
-            returned = true; // sets returned variable to true
+            isReturned = true; // sets returned variable to true
         }
     }
 
@@ -54,11 +54,6 @@ public class ShoppingCart {
     public String getName() // method to get customer name
     {
         return name; // returns customer name
-    }
-
-    public boolean isCompleted() // method to check if cart is complete
-    {
-        return complete; // returns whether or not cart is complete
     }
 
 }

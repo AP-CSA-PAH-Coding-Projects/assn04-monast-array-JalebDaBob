@@ -5,8 +5,8 @@ package apcsa.githubtrack;
 
 public class ShoppingItem{
 
-private int name;
-private String price; // in pennies
+private String name;
+private int price; // in pennies
 private boolean sold;
 
 public ShoppingItem(String name, int price)  // constructor that sets up name and price, and sets sold to false by default
@@ -18,19 +18,12 @@ public ShoppingItem(String name, int price)  // constructor that sets up name an
 
 public void buy()   // this method marks the item as sold
 {
-    if (this.sold != null) // checks if the item exists
-    {
-        sold = true; // sets sold to true
-    }
-    else
-    {
-        System.out.println("There is no item to check!"); // prints message if the item doesn't exist
-    }
+    sold = true; // sets sold to true
 }
 
 public boolean equals(ShoppingItem other)      // this method returns true if the item's name and price are equal
 {
-    if(this.name.equals(other.name) && this.price.equals(other.price)) // checks if name and price are equal
+    if(this.name.equals(other.name) && this.price == other.price) // checks if name and price are equal
     {
         return true; // returns true if both are equal
     }
@@ -60,6 +53,7 @@ public int compareTo(ShoppingItem item)    // compares two items if they have th
     else // different names
     {
         System.out.println("Error: different items!");
+        return 0;
     }
 }
 
