@@ -35,10 +35,11 @@ public class Main {
         dormRun.getAt(4).buy(); // buys smoked salmon (which has been removed)
         System.out.println(dormCart.isCompleted()); // checks if dormCart is completed and prints out the result
         breakfastEssentials.goShopping(); // buys all items in breakfastEssentials
-        System.out.println(ShoppingCart.getTotalCartsReturned()); // prints total carts returned (should be 0)
+        System.out.println(breakfastCart.isCompleted()); // checks if breakfastCart is completed and prints out the result
+        System.out.println(ShoppingCart.getTotalCartsReturned()); // prints total carts returned
         breakfastCart.returnCart(); // returns breakfastCart
         dormCart.returnCart(); // returns dormCart
-        System.out.println(ShoppingCart.getTotalCartsReturned()); // prints total carts returned (should be 1)
+        System.out.println(ShoppingCart.getTotalCartsReturned()); // prints total carts returned
 
         System.out.println(breakfastEssentials.getAt(1).compareTo(dormRun.getAt(3))); // compares the first item in breakfastEssentials to the third item in dormRun and prints out the result
 

@@ -13,7 +13,7 @@ public class ShoppingCart {
         this.name = name; // sets customer name
         this.list = list; // sets shopping list
         this.complete = false; // sets complete to false by default
-        this.isReturned = false; // sets returned to 0 by default
+        this.isReturned = false; // sets isReturned to false by default
     }
 
     public ShoppingCart(String name) // constructor with no ShoppingList
@@ -21,7 +21,7 @@ public class ShoppingCart {
         this.name = name; // sets customer name
         this.list = new ShoppingList(); // initializes list to an empty shopping list
         this.complete = false; // complete set to false by default
-        this.isReturned = false; // returned set to 0 by default
+        this.isReturned = false; // isReturned set to false by default
     }
 
     public boolean isCompleted() // returns true if all items in ShoppingList are bought
@@ -41,14 +41,14 @@ public class ShoppingCart {
     {
         if(complete == true && isReturned == false) // checks if cart is complete and has not been returned yet
         {
-            returned++; // adds 1 to total carts returned
+            ShoppingCart.returned++; // adds 1 to total carts returned
             isReturned = true; // sets returned variable to true
         }
     }
 
     public static int getTotalCartsReturned() // static method to get total carts returned (called with class name)
     {
-        return returned; // returns total carts returned
+        return ShoppingCart.returned; // returns total carts returned
     }
 
     public String getName() // method to get customer name
