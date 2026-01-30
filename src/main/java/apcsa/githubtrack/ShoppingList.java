@@ -1,6 +1,6 @@
 package apcsa.githubtrack;
 
-// Implement the ShoppingList class here
+// Implement your ShoppingList class here
 
 public class ShoppingList implements MyList //ShoppingList class, which is like an ArrayList for ShoppingItems
 {

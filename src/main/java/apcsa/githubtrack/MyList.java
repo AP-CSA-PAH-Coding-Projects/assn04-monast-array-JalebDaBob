@@ -7,13 +7,13 @@ package apcsa.githubtrack;
  */
 public interface MyList {
   /** Adds an element at the end of the list. */
-  public void addToEnd(Object o);
+  public void addToEnd(ShoppingItem o);
 
   /**
    * Inserts an element at the specified index. Prints to console, "No such element exists!" if
    * index is out of bounds.
    */
-  public void insertAt(int index, Object o);
+  public void insertAt(int index, ShoppingItem o);
 
   /**
    * Removes the element at the specified index. Prints to console, "No such element exists!" if
